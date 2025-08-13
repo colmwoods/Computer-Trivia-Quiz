@@ -19,10 +19,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <link rel=stylesheet href="assets/css/style.css">
+    <script href="assets/js/script.js"></script>
 </head>
 
 <body>
-    <section>
+    <section id="page1" class="container mt-5">
         <h1>Computer Trivia Quiz</h1>
         <p>Test your knowledge about computers with this fun quiz!</p>
         <div class="row">
@@ -34,20 +36,17 @@
                 </select>
             </label>
         </div>
-        <button id="nextToNumberofQuestions">Next</button>
-    </section id="NumberofQuestions">
-    <div class="row">
-        <label>
-            Number of Questions:
-            <input type="number" id="numberOfQuestions" class="form-control" placeholder="Enter number of questions"
-                min="" max="25" value="10">
-            <button id="startQuiz" class="btn btn-primary mt-2">Start Quiz</button>
-        </label>
-    </div>
-
-
-    <section>
-
+        <button id="ontoPage2">Next</button>
+    </section>
+    <section id="page2" class="hidden container mt-5">
+        <div class="row">
+            <label>
+                Number of Questions:
+                <input type="number" id="numberOfQuestions" class="form-control" placeholder="Enter number of questions"
+                    min="5" max="25" value="10">
+                <button id="startQuiz" class="btn btn-primary mt-2">Start Quiz</button>
+            </label>
+        </div>
     </section>
 </body>
 
