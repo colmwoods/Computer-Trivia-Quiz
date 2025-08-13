@@ -17,6 +17,15 @@ const totalScore = document.getElementById("total"); // Total Score Display
 const againButton = document.getElementById("againBtn"); // Play Again Button
 
 
+const state = {
+    difficulty: 'mixed', // Default Difficulty
+    amount: 10,     // Default Number of Questions
+    questions: [], // Array to hold questions
+    current: 0, // Current Question Index
+    score: 0, // Current Score
+    incorrect: 0 // Current Incorrect Answers
+};
+
 function showPage(sectionId) {
 }
 
