@@ -12,7 +12,7 @@ const score = document.getElementById("score"); // Score Display
 const incorrect = document.getElementById("incorrect"); // Incorrect Answers Display
 const questionsDisplay = document.getElementById("questions"); // Questions Display
 const choicesElement = document.getElementById("choices"); // Choices Display
-const NextQuestion = document.getElementById("nextQuestion"); // Next Question Button
+const NextQuestionButton = document.getElementById("nextQuestion"); // Next Question Button
 const totalScore = document.getElementById("total"); // Total Score Display
 const againButton = document.getElementById("againBtn"); // Play Again Button
 
@@ -27,9 +27,14 @@ const state = {
 };
 
 function showPage(sectionId) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));  // Hide All Sections
+    document.getElementById(sectionId).classList.remove('hidden');   // Show the Page We Want
+
 }
 
 function StartQuiz() {
+    showPage('quiz');
+    renderQuestions();
 
 }
 
@@ -43,10 +48,21 @@ function selectAnswer() {
 }
 
 function EndQuiz() {
+    showPage('end');
 }
 
 function ShowScore() {
 }
 
 function PlayAgain() {
+    showPage('page1');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    showPage('page1'); // Show the start page by default
+
+    ontoPage2.addEventListener('click', () => showPage('page2')); // Brings User To Number of Questions Page
+    startQuizButton.addEventListener('click', StartQuiz); // Starts the Quiz
+    NextQuestionButton.addEventListener('click', NextQuestion); // Proceeds to the Next Question
+    againButton.addEventListener('click', PlayAgain); // Restarts the Quiz
+});
