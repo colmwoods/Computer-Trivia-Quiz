@@ -70,6 +70,12 @@ function fetchQuestions(url) {
 }
 
 function NextQuestion() {
+    if (state.current < state.questions.length - 1) {
+        state.current++;
+        renderQuestions();
+    } else {
+        EndQuiz();
+    }
 }
 
 function selectAnswer() {
