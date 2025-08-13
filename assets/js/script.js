@@ -32,10 +32,23 @@ function showPage(sectionId) {
 
 }
 
-function StartQuiz() {
-    showPage('quiz');
-    renderQuestions();
+async function StartQuiz() {
+    const amount = Math.max(5, Math.min(25, parseInt(numberOfQuestions.value || "10", 10)));
+    const difficulty = difficultySelect.value; // or "mixed" if you added that option
+    const url = `https://opentdb.com/api.php?amount=${amount}&category=18${difficulty && difficulty !== "mixed" ? `&difficulty=${difficulty}` : ""}`;
 
+    showPage('quiz');
+    questionsDisplay.textContent = 'Loading questions…';
+    choicesElement.innerHTML = '';
+
+    const qs = await fetchQuestions(url);
+    state.questions = qs;
+    state.current = 0;
+    state.score = 0;
+    state.incorrect = 0;
+    score.textContent = `Score: ${state.score}`;
+    incorrect.textContent = `Incorrect: ${state.incorrect}`;
+    renderQuestions();
 }
 
 function renderQuestions() {
