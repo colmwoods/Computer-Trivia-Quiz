@@ -64,6 +64,11 @@ async function StartQuiz() {
 function renderQuestions() {
 }
 
+function fetchQuestions(url) {
+    return fetch(url);
+
+}
+
 function NextQuestion() {
 }
 
@@ -72,6 +77,7 @@ function selectAnswer() {
 
 function EndQuiz() {
     showPage('end');
+    totalScore.textContent = `Total Score: ${state.score} out of ${state.questions.length}`;
 }
 
 function ShowScore() {
