@@ -26,6 +26,16 @@ const state = {
     incorrect: 0 // Current Incorrect Answers
 };
 
+function decodeHTML(html) {
+    const t = document.createElement('textarea');
+    t.innerHTML = html;
+    return t.value;
+}
+
+function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.5);
+}
+
 function showPage(sectionId) {
     document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));  // Hide All Sections
     document.getElementById(sectionId).classList.remove('hidden');   // Show the Page We Want
