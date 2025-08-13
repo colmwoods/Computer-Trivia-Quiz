@@ -24,6 +24,8 @@
 </head>
 
 <body>
+
+    <!-- Difficulty-->
     <section id="page1" class="container mt-5">
         <h1>Computer Trivia Quiz</h1>
         <p>Test your knowledge about computers with this fun quiz!</p>
@@ -38,6 +40,8 @@
         </div>
         <button id="ontoPage2">Next</button>
     </section>
+
+    <!-- Number Of Questions-->
     <section id="page2" class="hidden container mt-5">
         <div class="row">
             <label>
@@ -48,6 +52,33 @@
             </label>
         </div>
     </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="hidden">
+        <div id="status">
+            <span id="questionNumber">Question 1 / 10</span>
+            <span id="score">Score: 0</span>
+            <span id="innorrect">Incorrect: 0</span>
+        </div>
+        <h2 id="questions">Loading....</h2>
+        <div id="choices"></div>
+        <button id="nextQuestion" class="btn btn-secondary hidden">Next Question</button>
+    </section>
+
+    <!-- End -->
+    <section id="end" class="hidden container mt-5">
+        <h2>Quiz Completed!</h2>
+        <p>Your score: <span id="total">0</span></p>
+        <button id="againBtn" class="btn btn-primary">Play Again</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5 text-center">
+        <p>&copy; 2023 Computer Trivia Quiz. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
