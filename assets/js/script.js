@@ -78,7 +78,25 @@ function NextQuestion() {
     }
 }
 
-function selectAnswer() {
+function selectAnswer(selectedAnswer, correctAnswer) {
+    if (selectedAnswer === correctAnswer) {
+        state.score++;
+        score.textContent = `Score: ${state.score}`;
+    } else {
+        state.incorrect++;
+        incorrect.textContent = `Incorrect: ${state.incorrect}`;
+    }
+    const choiceButtons = document.querySelectorAll('.choice-button');
+    choiceButtons.forEach(button => {
+        button.disabled = true;
+        if (button.textContent === correctAnswer) {
+            button.classList.add(score);
+        }
+        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+            button.classList.add(incorrect);
+        }
+    });
+    NextQuestionButton.classList.remove('hidden');
 }
 
 function EndQuiz() {
