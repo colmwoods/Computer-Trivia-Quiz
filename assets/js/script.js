@@ -86,7 +86,7 @@ function renderQuestions() {
         const button = document.createElement('button'); // Create Button Element for Each Answer
         button.textContent = decodeHTML(answer); // Set Button Text to Answer
         button.classList.add('choice-button'); // Add Class for Styling
-        button.addEventListener('click', () => selectAnswer(button.textContent, currentQuestion.correctAnswer)); // Add Click Event to Select Answer
+        button.addEventListener('click', () => selectAnswer(button.textContent, currentQuestion.correct_answer)); // Add Click Event to Select Answer
         choicesElement.appendChild(button); // Append Button to Choices Element
     });
 
