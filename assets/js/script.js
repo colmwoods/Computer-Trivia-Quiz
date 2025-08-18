@@ -68,6 +68,9 @@ function renderQuestions() {
         EndQuiz();
         return;
     }
+
+    NextQuestionButton.classList.add('hidden'); // Hide Next Question Button Until Answer is Selected
+
     questionsDisplay.textContent = decodeHTML(currentQuestion.question); // Display The Current Question
     questionNumber.textContent = `Question ${state.current + 1} of ${state.questions.length}`; // Display Question Number
     choicesElement.innerHTML = ''; // Clear Previous Choices
@@ -92,8 +95,6 @@ function renderQuestions() {
         button.disabled = false; // Enable All Choice Buttons
         button.classList.remove('score', 'incorrect'); // Remove Previous Classes
     });
-
-    NextQuestionButton.classList.add('hidden');
 }
 
 async function fetchQuestions(url) { // Function to Fetch Questions from the API
