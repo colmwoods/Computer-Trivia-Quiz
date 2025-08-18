@@ -1,5 +1,5 @@
-const page1 = document.getElementById("page1"); // Start Page
-const page2 = document.getElementById("page2"); // Quiz Page
+const page1 = document.getElementById("page1"); // Difficulty Page
+const page2 = document.getElementById("page2"); // Number Of Questions Page
 const quiz = document.getElementById("quiz"); // Quiz Section
 const end = document.getElementById("end"); // End Page
 
@@ -15,9 +15,10 @@ const choicesElement = document.getElementById("choices"); // Choices Display
 const NextQuestionButton = document.getElementById("nextQuestion"); // Next Question Button
 const totalScore = document.getElementById("total"); // Total Score Display
 const againButton = document.getElementById("againBtn"); // Play Again Button
+const currentQuestion = state.questions[state.current]; // Current Question
 
 
-const state = {
+const state = { // State Object to Hold Quiz Data / Defaults
     difficulty: 'mixed', // Default Difficulty
     amount: 10,     // Default Number of Questions
     questions: [], // Array to hold questions
@@ -62,6 +63,10 @@ async function StartQuiz() {
 }
 
 function renderQuestions() {
+    if (!currentQuestion) {
+        EndQuiz();
+        return;
+    }
 }
 
 function fetchQuestions(url) {
