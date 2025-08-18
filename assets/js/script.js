@@ -122,25 +122,28 @@ function NextQuestion() {
     }
 }
 
-function selectAnswer(selectedAnswer, correctAnswer) {
-    if (selectedAnswer === correctAnswer) {
-        state.score++;
-        score.textContent = `Score: ${state.score}`;
-    } else {
-        state.incorrect++;
-        incorrect.textContent = `Incorrect: ${state.incorrect}`;
+function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Answer Selection
+    if (selectedAnswer === correctAnswer) { // If Selected Answer is Correct
+        state.score++; // Increment Score
+        score.textContent = `Score: ${state.score}`; // Update Score Display
+
+    } else { // If Selected Answer is Incorrect
+        state.incorrect++; // Increment Incorrect Answers
+        incorrect.textContent = `Incorrect: ${state.incorrect}`; // Update Incorrect Answers Display
     }
-    const choiceButtons = document.querySelectorAll('.choice-button');
-    choiceButtons.forEach(button => {
-        button.disabled = true;
-        if (button.textContent === correctAnswer) {
-            button.classList.add(score);
+
+    const choiceButtons = document.querySelectorAll('.choice-button'); // Get All Choice Buttons
+    choiceButtons.forEach(button => { // Loop Through Each Choice Button
+        button.disabled = true; // Disable All Choice Buttons
+
+        if (button.textContent === correctAnswer) { // If Button Text Matches Correct Answer
+            button.classList.add('score'); // Add Score Class to Correct Answer Button
         }
-        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
-            button.classList.add(incorrect);
+        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) { // If Button Text Matches Selected Answer and is Incorrect
+            button.classList.add('incorrect'); // Add Incorrect Class to Selected Answer Button
         }
     });
-    NextQuestionButton.classList.remove('hidden');
+    NextQuestionButton.classList.remove('hidden'); // Show Next Question Button
 }
 
 function EndQuiz() {
