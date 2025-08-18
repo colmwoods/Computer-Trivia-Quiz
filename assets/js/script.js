@@ -104,8 +104,17 @@ async function fetchQuestions(url) { // Function to Fetch Questions from the API
             throw new Error(`HTTP error! status: ${response.status}`); // Throw An Error
         }
         const data = await response.json(); // Await JSON Response
+
+        if (data?.response_code !== 0 || !Array.isArray(data?.results) || data.results.length === 0) { // Check if Response Code is Not 0 or Results Array is Empty
+            console.error('OpenTDB returned no results:', data); // Log Error to Console
+            questionsDisplay.textContent = 'No questions returned. Try a different difficulty or number.'; // Display Error Message
+            return [];
+        }
+
         return data.results; // Return The Questions Array
     }
+
+
     catch (error) { // Catch Any Errors
         console.error('Error fetching questions:', error); // Log Error to Console
         questionsDisplay.textContent = 'Failed to load questions. Please try again later.'; // Display Error Message
