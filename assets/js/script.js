@@ -123,7 +123,12 @@ function NextQuestion() {
 }
 
 function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Answer Selection
-    if (selectedAnswer === correctAnswer) { // If Selected Answer is Correct
+    const normalize = s => decodeHTML(String(s)) // Decode HTML Entities
+        .replace(/\u00a0/g, ' ') // Replace Non-Breaking Spaces
+        .replace(/\s+/g, ' ')  // Replace Multiple Spaces with Single Space
+        .trim(); // Trim Leading and Trailing Spaces
+
+    if (normalize(selectedAnswer) === normalize(correctAnswer)) { // If Selected Answer is Correct
         state.score++; // Increment Score
         score.textContent = `Score: ${state.score}`; // Update Score Display
 
@@ -136,10 +141,13 @@ function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Ans
     choiceButtons.forEach(button => { // Loop Through Each Choice Button
         button.disabled = true; // Disable All Choice Buttons
 
-        if (button.textContent === correctAnswer) { // If Button Text Matches Correct Answer
+        if (normalize(button.textContent) === normalize(correctAnswer)) { // If Button Text Matches Correct Answer
             button.classList.add('score'); // Add Score Class to Correct Answer Button
         }
-        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) { // If Button Text Matches Selected Answer and is Incorrect
+        if (
+            normalize(button.textContent) === normalize(selectedAnswer) && // If Button Text Matches Selected Answer
+            normalize(selectedAnswer) !== normalize(correctAnswer) // If Selected Answer is Not Correct
+        ) {
             button.classList.add('incorrect'); // Add Incorrect Class to Selected Answer Button
         }
     });
