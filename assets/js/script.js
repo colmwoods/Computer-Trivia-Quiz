@@ -142,9 +142,6 @@ function EndQuiz() {
     totalScore.textContent = `Total Score: ${state.score} out of ${state.questions.length}`;
 }
 
-function ShowScore() {
-}
-
 function PlayAgain() {
     showPage('page1');
 }
