@@ -16,6 +16,8 @@ const NextQuestionButton = document.getElementById("nextQuestion"); // Next Ques
 const totalScore = document.getElementById("total"); // Total Score Display
 const againButton = document.getElementById("againBtn"); // Play Again Button
 const currentQuestion = state.questions[state.current]; // Current Question
+const answers = [...currentQuestion.incorrect, currentQuestion.correctAnswer];
+const shuffledAnswers = shuffle(answers);
 
 
 const state = { // State Object to Hold Quiz Data / Defaults
@@ -63,10 +65,13 @@ async function StartQuiz() {
 }
 
 function renderQuestions() {
-    if (!currentQuestion) {
+    if (!currentQuestion) { // If There Are No Questions, Quit Quiz
         EndQuiz();
         return;
     }
+    questionsDisplay.textContent = decodeHTML(currentQuestion.question); // Display The Current Question
+    questionNumber.textContent = `Question ${state.current + 1} of ${state.questions.length}`; // Display Question Number
+    choicesElement.innerHTML = ''; // Clear Previous Choices
 }
 
 function fetchQuestions(url) {
