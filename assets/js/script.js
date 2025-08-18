@@ -18,7 +18,6 @@ const againButton = document.getElementById("againBtn"); // Play Again Button
 
 
 
-
 const state = { // State Object to Hold Quiz Data / Defaults
     difficulty: 'mixed', // Default Difficulty
     amount: 10,     // Default Number of Questions
@@ -73,7 +72,11 @@ function renderQuestions() {
     questionNumber.textContent = `Question ${state.current + 1} of ${state.questions.length}`; // Display Question Number
     choicesElement.innerHTML = ''; // Clear Previous Choices
 
-    const answers = [...currentQuestion.incorrect, currentQuestion.correctAnswer]; // Answers Array with Correct Answer and Incorrect Answers
+    const answers = [
+        ...currentQuestion.incorrect_answers, // Answers Array with Correct Answer and Incorrect Answers
+        currentQuestion.correct_answer
+    ];
+
     const shuffledAnswers = shuffle(answers); // Shuffle Answers Variable
 
     shuffledAnswers.forEach(answer => {
@@ -89,6 +92,8 @@ function renderQuestions() {
         button.disabled = false; // Enable All Choice Buttons
         button.classList.remove('score', 'incorrect'); // Remove Previous Classes
     });
+
+    NextQuestionButton.classList.add('hidden');
 }
 
 async function fetchQuestions(url) { // Function to Fetch Questions from the API
