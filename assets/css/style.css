@@ -27,3 +27,25 @@ body::before {
 .hidden {
     display: none !important;
 }
+
+.choice-button.score {
+    outline: 3px solid #22c55e;
+    outline-offset: 2px;
+}
+
+.choice-button.incorrect {
+    outline: 3px solid #ef4444;
+    outline-offset: 2px;
+}
+
+.choice-button {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
