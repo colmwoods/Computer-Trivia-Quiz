@@ -91,9 +91,20 @@ function renderQuestions() {
     });
 }
 
-function fetchQuestions(url) {
-    return fetch(url);
-
+async function fetchQuestions(url) { // Function to Fetch Questions from the API
+    try {
+        const response = await fetch(url); // Fetch Questions from the API
+        if (!response.ok) { // If Response is Not OK
+            throw new Error(`HTTP error! status: ${response.status}`); // Throw An Error
+        }
+        const data = await response.json(); // Await JSON Response
+        return data.results; // Return The Questions Array
+    }
+    catch (error) { // Catch Any Errors
+        console.error('Error fetching questions:', error); // Log Error to Console
+        questionsDisplay.textContent = 'Failed to load questions. Please try again later.'; // Display Error Message
+        return []; // Return Empty Array if Fetch Fails
+    }
 }
 
 function NextQuestion() {
