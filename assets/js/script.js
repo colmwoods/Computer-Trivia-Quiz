@@ -74,7 +74,21 @@ function renderQuestions() {
     choicesElement.innerHTML = ''; // Clear Previous Choices
 
     const answers = [...currentQuestion.incorrect, currentQuestion.correctAnswer]; // Answers Array with Correct Answer and Incorrect Answers
-    const shuffledAnswers = shuffle(answers); // Shuffle Answers
+    const shuffledAnswers = shuffle(answers); // Shuffle Answers Variable
+
+    shuffledAnswers.forEach(answer => {
+        const button = document.createElement('button'); // Create Button Element for Each Answer
+        button.textContent = decodeHTML(answer); // Set Button Text to Answer
+        button.classList.add('choice-button'); // Add Class for Styling
+        button.addEventListener('click', () => selectAnswer(button.textContent, currentQuestion.correctAnswer)); // Add Click Event to Select Answer
+        choicesElement.appendChild(button); // Append Button to Choices Element
+    });
+
+    const choiceButtons = document.querySelectorAll('.choice-button'); // Get All Choice Buttons
+    choiceButtons.forEach(button => { // Loop Through Each Choice Button
+        button.disabled = false; // Enable All Choice Buttons
+        button.classList.remove('score', 'incorrect'); // Remove Previous Classes
+    });
 }
 
 function fetchQuestions(url) {
