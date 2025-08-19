@@ -4,24 +4,12 @@ body {
 }
 
 body {
-    background-image: url('../img/background-img.jpg');
+    background-color: aqua;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    pointer-events: none;
-    z-index: -1;
 }
 
 .hidden {
@@ -42,10 +30,40 @@ body::before {
     background-color: #f3f4f6;
     color: #1f2937;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 130px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin: 5px;
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+#nextQuestion {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#difficulty {
+    top: 5px;
+    right: 10px;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    padding: 10px 20px;
+    font-size: 25px;
+}
+
+#ontoPage2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 45px;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
