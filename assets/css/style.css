@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    background-color: aqua;
+    background-image: url('../img/background-img.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -14,6 +14,12 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+#choices {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .choice-button.score {
@@ -30,7 +36,8 @@ body {
     background-color: #f3f4f6;
     color: #1f2937;
     border: none;
-    padding: 20px 130px;
+    padding: 14px 16px;
+    border: 3px solid #ffffff;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -38,16 +45,21 @@ body {
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
+@media (max-width: 480px) {
+    #choices {
+        grid-template-columns: 1fr;
+    }
+}
+
 #nextQuestion {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s, transform 0.2s;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    padding: 20px 45px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #f3f4f6;
+    color: black
 }
 
 #difficulty {
@@ -61,7 +73,7 @@ body {
 
 #ontoPage2 {
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     padding: 20px 45px;
     transform: translate(-50%, -50%);
@@ -90,10 +102,24 @@ footer {
 
 #startQuiz {
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     padding: 20px 45px;
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: #f3f4f6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: aqua;
+}
+
+#page1,
+#page2,
+#quiz {
+    position: relative;
+    min-height: 60vh;
 }
