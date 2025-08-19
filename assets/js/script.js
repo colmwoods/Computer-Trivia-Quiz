@@ -76,7 +76,7 @@ function renderQuestions() {
     choicesElement.innerHTML = ''; // Clear Previous Choices
 
     const answers = [
-        ...currentQuestion.incorrect_answers, // Answers Array with Correct Answer and Incorrect Answers
+        ...currentQuestion.incorrect_answers, // Answers Array with Correct Answer and Incorrect Answers (OpenTDB Format)
         currentQuestion.correct_answer
     ];
 
