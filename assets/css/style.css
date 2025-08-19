@@ -127,3 +127,12 @@ footer {
 span {
     font-size: 50px;
 }
+
+#home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: #1f2937;
+    text-decoration: none;
+}

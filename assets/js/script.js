@@ -72,7 +72,7 @@ function renderQuestions() {
     NextQuestionButton.classList.add('hidden'); // Hide Next Question Button Until Answer is Selected
 
     questionsDisplay.textContent = decodeHTML(currentQuestion.question); // Display The Current Question
-    questionNumber.textContent = `Question ${state.current + 1} of ${state.questions.length}`; // Display Question Number
+    questionNumber.textContent = `Question ${state.current + 1} / ${state.questions.length}`; // Display Question Number
     choicesElement.innerHTML = ''; // Clear Previous Choices
 
     const answers = [
@@ -165,7 +165,7 @@ function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Ans
 
 function EndQuiz() {
     showPage('end');
-    totalScore.textContent = `Total Score: ${state.score} out of ${state.questions.length}`;
+    totalScore.textContent = `${state.score} / ${state.questions.length}`;
 }
 
 function PlayAgain() {
