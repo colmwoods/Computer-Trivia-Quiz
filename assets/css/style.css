@@ -47,8 +47,25 @@ body {
 }
 
 @media (max-width: 480px) {
+    #status {
+        flex-direction: column;
+        /* stack Question/Score/Incorrect */
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    #status span {
+        font-size: 14px;
+    }
+
     #choices {
         grid-template-columns: 1fr;
+        /* single column on phones */
+    }
+
+    #questions {
+        font-size: 18px;
+        margin-bottom: 8px;
     }
 }
 
