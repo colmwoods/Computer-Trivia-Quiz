@@ -123,3 +123,7 @@ footer {
     position: relative;
     min-height: 60vh;
 }
+
+span {
+    font-size: 50px;
+}
