@@ -67,3 +67,13 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    text-align: center;
+    padding: 10px 0;
+}
