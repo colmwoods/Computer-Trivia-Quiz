@@ -46,13 +46,13 @@ The strategy was to create a **simple, interactive quiz application** that would
 Screens were designed responsively for **mobile, tablet, and desktop**.  
 
 ### Mobile View  
-![Mobile view](assets/images/readme-screenshots/mobile-view.jpg)  
+![Mobile view](docs/img/mobile-view.jpg)  
 
 ### Tablet View  
-![Tablet view](assets/images/readme-screenshots/tablet-view.jpg)  
+![Tablet view](docs/img/tablet-view.jpg)  
 
 ### Desktop View  
-![Desktop view](assets/images/readme-screenshots/desktop-view.jpg)  
+![Desktop view](docs/img/desktop-view.jpg)  
 
 ---
 
@@ -119,21 +119,22 @@ The site was deployed to **GitHub Pages**:
 
 You can clone this repository to create a local copy:  
 
-```bash
 git clone "https://github.com/colmwoods/Computer-Trivia-Quiz.git"
-Forking
-You can fork this repository to make a copy under your own GitHub account, allowing you to freely experiment with changes without affecting the original project.
 
-bash
-Copy
-Edit
+---
+
+### Forking  
+
+You can fork this repository to make a copy under your own GitHub account, allowing you to freely experiment with changes without affecting the original project.  
+
 1. Go to the GitHub repository: https://github.com/colmwoods/Computer-Trivia-Quiz  
 2. In the top-right corner, click the **Fork** button.  
 3. A copy of the repository will now exist in your GitHub account.  
-Credits
-bash
-Copy
-Edit
+
+---
+
+## Credits  
+
 Content  
 - All quiz questions written by the author.  
 
@@ -143,4 +144,4 @@ Media
 
 Acknowledgements  
 - Thanks to Code Institute resources for project guidance.  
-- README structure inspired by Matthew Aitken’s template (https://github.com/apeskinian/p1_bgfc).   
+- README structure inspired by Matthew Aitken’s template (https://github.com/apeskinian/p1_bgfc).
