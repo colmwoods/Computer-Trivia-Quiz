@@ -27,17 +27,17 @@ const state = { // State Object to Hold Quiz Data / Defaults
     incorrect: 0 // Current Incorrect Answers
 };
 
-function decodeHTML(html) {
-    const t = document.createElement('textarea');
-    t.innerHTML = html;
-    return t.value;
+function decodeHTML(html) { // Function to Decode HTML Entities
+    const t = document.createElement('textarea'); // Create a Textarea Element
+    t.innerHTML = html; // Set Inner HTML to the Encoded String
+    return t.value; // Return the Decoded Value
 }
 
-function shuffle(arr) {
-    return arr.sort(() => Math.random() - 0.5);
+function shuffle(arr) { // Function to Shuffle an Array
+    return arr.sort(() => Math.random() - 0.5); // Sort the Array Randomly
 }
 
-function showPage(sectionId) {
+function showPage(sectionId) { // Function to Show a Specific Page and Hide Others
     document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));  // Hide All Sections
     document.getElementById(sectionId).classList.remove('hidden');   // Show the Page We Want
 
@@ -59,28 +59,28 @@ async function StartQuiz() {
     const amount = raw; // Get the Number of Questions from Input
 
     const difficulty = difficultySelect.value; // or "mixed" if you added that option
-    const url = `https://opentdb.com/api.php?amount=${amount}&category=18${difficulty && difficulty !== "mixed" ? `&difficulty=${difficulty}` : ""}`;
+    const url = `https://opentdb.com/api.php?amount=${amount}&category=18${difficulty && difficulty !== "mixed" ? `&difficulty=${difficulty}` : ""}`; // Construct the API URL with Selected Difficulty and Amount
 
 
-    showPage('quiz');
-    questionsDisplay.textContent = 'Loading questions…';
-    choicesElement.innerHTML = '';
+    showPage('quiz'); // Show the Quiz Page
+    questionsDisplay.textContent = 'Loading questions…'; // Display Loading Message
+    choicesElement.innerHTML = ''; // Clear Previous Choices
 
-    const qs = await fetchQuestions(url);
-    state.questions = qs;
-    state.current = 0;
-    state.score = 0;
-    state.incorrect = 0;
-    score.textContent = `Score: ${state.score}`;
-    incorrect.textContent = `Incorrect: ${state.incorrect}`;
+    const qs = await fetchQuestions(url); // Fetch Questions from the API
+    state.questions = qs; // Store Questions in State Object
+    state.current = 0; // Reset Current Question Index
+    state.score = 0; // Reset Score
+    state.incorrect = 0; // Reset Incorrect Answers
+    score.textContent = `Score: ${state.score}`; // Reset Score Display
+    incorrect.textContent = `Incorrect: ${state.incorrect}`; // Reset Incorrect Answers Display
     renderQuestions();
 }
 
-function renderQuestions() {
+function renderQuestions() { // Function to Render Questions and Choices
     const currentQuestion = state.questions[state.current]; // Current Question
     if (!currentQuestion) { // If There Are No Questions, Quit Quiz
-        EndQuiz();
-        return;
+        EndQuiz(); // End the Quiz if No Questions are Available
+        return; // Exit If No Current Question Are Available
     }
 
     NextQuestionButton.classList.add('hidden'); // Hide Next Question Button Until Answer is Selected
@@ -136,12 +136,12 @@ async function fetchQuestions(url) { // Function to Fetch Questions from the API
     }
 }
 
-function NextQuestion() {
-    if (state.current < state.questions.length - 1) {
-        state.current++;
-        renderQuestions();
-    } else {
-        EndQuiz();
+function NextQuestion() { // Function To Go to the Next Question
+    if (state.current < state.questions.length - 1) { // If There Are More Questions
+        state.current++; // Increment Current Question Index
+        renderQuestions(); // Render the Next Question
+    } else { // If No More Questions Left
+        EndQuiz(); // End the Quiz
     }
 }
 
@@ -177,16 +177,16 @@ function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Ans
     NextQuestionButton.classList.remove('hidden'); // Show Next Question Button
 }
 
-function EndQuiz() {
-    showPage('end');
-    totalScore.textContent = `${state.score} / ${state.questions.length}`;
+function EndQuiz() { // Function to End the Quiz
+    showPage('end'); // Show End Page
+    totalScore.textContent = `${state.score} / ${state.questions.length}`; // Display Total Score
 }
 
-function PlayAgain() {
-    showPage('page1');
+function PlayAgain() { // Function to Restart the Quiz
+    showPage('page1'); // Show Difficulty Page
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // Event Listener for DOMContentLoaded
     showPage('page1'); // Show the start page by default
 
     ontoPage2.addEventListener('click', () => showPage('page2')); // Brings User To Number of Questions Page
