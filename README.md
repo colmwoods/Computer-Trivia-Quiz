@@ -121,16 +121,19 @@ You can clone this repository to create a local copy:
 
 ```bash
 git clone "https://github.com/colmwoods/Computer-Trivia-Quiz.git"
+Forking
+You can fork this repository to make a copy under your own GitHub account, allowing you to freely experiment with changes without affecting the original project.
 
-### Forking  
-
-You can fork this repository to make a copy under your own GitHub account, allowing you to freely experiment with changes without affecting the original project.  
-
-```bash
+bash
+Copy
+Edit
 1. Go to the GitHub repository: https://github.com/colmwoods/Computer-Trivia-Quiz  
 2. In the top-right corner, click the **Fork** button.  
 3. A copy of the repository will now exist in your GitHub account.  
-
+Credits
+bash
+Copy
+Edit
 Content  
 - All quiz questions written by the author.  
 
@@ -140,4 +143,4 @@ Media
 
 Acknowledgements  
 - Thanks to Code Institute resources for project guidance.  
-- README structure inspired by Matthew Aitken’s template (https://github.com/apeskinian/p1_bgfc).  
+- README structure inspired by Matthew Aitken’s template (https://github.com/apeskinian/p1_bgfc).   
