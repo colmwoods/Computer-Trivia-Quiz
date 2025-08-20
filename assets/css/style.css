@@ -100,7 +100,7 @@ body {
         /* Reduced Margin for Questions */
     }
 
-    #home-button {
+    .home-button {
         font-size: 20px !important;
         /* Smaller Home Button */
         top: 5px;
@@ -225,7 +225,7 @@ span {
     /* Font Size for Status Text */
 }
 
-#home-button {
+.home-button {
     position: absolute;
     /* Position Home Button */
     top: 10px;

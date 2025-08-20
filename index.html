@@ -43,23 +43,23 @@
                 </select>
             </label>
         </div>
-        <button id="ontoPage2" aria-keyshortcuts="Enter">Next</button> <!-- Button to Go to Number of Questions Page -->
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
+        <button id="ontoPage2">Next</button> <!-- Button to Go to Number of Questions Page -->
+        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- Number Of Questions-->
     <section id="page2" class="hidden container mt-5">
         <div class="row">
+            <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
+            <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
+                Maximum Is 25</p>
             <label>
-                <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
-                <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
-                    Maximum Is 25</p> <!-- Note for Users -->
                 <input type="number" id="numberOfQuestions" class="form-control" placeholder="Enter number of questions"
                     min="5" max="25" value="10">
-                <button id="startQuiz" aria-keyshortcuts="Enter">Start Quiz</button> <!-- Button to Start Quiz -->
             </label>
+            <button id="startQuiz">Start Quiz</button> <!-- Button to Start Quiz -->
         </div>
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
+        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- Quiz Section -->
@@ -67,14 +67,13 @@
         <div id="status">
             <span id="questionNumber">Question 1 / 10</span> <!-- Current Question Number -->
             <span id="score" class="position-absolute bottom-0 start-0 m-2">Score: 0</span> <!-- Current Score -->
-            <span id="incorrect" class="position-absolute bottom-0 end-0 m-2">Incorrect: 0</span>
-            <!-- Incorrect Answers -->
+            <span id="incorrect" class="position-absolute bottom-0 end-0 m-2">Incorrect: 0</span> <!-- Wrong Answers -->
+
         </div>
         <h2 id="questions">Loading....</h2> <!-- Current Question Text If Questions Loading Or Dont Show Up -->
-        <div id="choices"></div>
-        <button id="nextQuestion" class="btn btn-secondary hidden" aria-keyshortcuts="Enter">Next Question</button>
-        <!-- Button to Go to Next Question -->
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
+        <div id="choices"></div> <!-- Choices for the Current Question -->
+        <button id="nextQuestion" class="btn btn-secondary hidden">Next Question</button> <!-- Button To Next Page -->
+        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- End -->
