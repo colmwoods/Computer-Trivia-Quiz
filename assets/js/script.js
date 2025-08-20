@@ -194,3 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
     NextQuestionButton.addEventListener('click', NextQuestion); // Proceeds to the Next Question
     againButton.addEventListener('click', PlayAgain); // Restarts the Quiz
 });
+
+const isVisible = el => el && !el.classList.contains('hidden'); // Function to Check if Element is Visible
+
+document.addEventListener('keydown', (e) => { // Keydown Event Listener for Keyboard Navigation
+    if (e.key !== 'Enter') return; // Only Proceed if Enter Key is Pressed
+
+    if (isVisible(page1)) { ontoPage2.click(); e.preventDefault(); return; } // If Page 1 is Visible, Click the Next Button
+    if (isVisible(page2)) { startQuizButton.click(); e.preventDefault(); return; } // If Page 2 is Visible, Click the Start Quiz Button
+    if (isVisible(quiz) && !NextQuestionButton.classList.contains('hidden')) { // If Quiz is Visible and Next Question Button is Not Hidden
+        NextQuestionButton.click(); e.preventDefault(); return; // Click the Next Question Button
+    }
+    if (isVisible(end)) { againButton.click(); e.preventDefault(); } // If End Page is Visible, Click the Play Again Button
+});
