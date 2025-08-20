@@ -36,50 +36,52 @@
         <div class="row">
             <label>
                 <select id="difficulty" class="form-select">
-                    <option value="mixed" selected>Mixed</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
+                    <option value="mixed" selected>Mixed</option> <!-- Mixed Option -->
+                    <option value="easy">Easy</option> <!-- Easy Option -->
+                    <option value="medium">Medium</option> <!-- Medium Option -->
+                    <option value="hard">Hard</option> <!-- Hard Option -->
                 </select>
             </label>
         </div>
-        <button id="ontoPage2" aria-keyshortcuts="Enter">Next</button>
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a>
+        <button id="ontoPage2" aria-keyshortcuts="Enter">Next</button> <!-- Button to Go to Number of Questions Page -->
+        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- Number Of Questions-->
     <section id="page2" class="hidden container mt-5">
         <div class="row">
             <label>
-                <h2 class="text-center">Number of Questions:</h2>
+                <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
                 <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
-                    Maximum Is 25</p>
+                    Maximum Is 25</p> <!-- Note for Users -->
                 <input type="number" id="numberOfQuestions" class="form-control" placeholder="Enter number of questions"
                     min="5" max="25" value="10">
-                <button id="startQuiz" aria-keyshortcuts="Enter">Start Quiz</button>
+                <button id="startQuiz" aria-keyshortcuts="Enter">Start Quiz</button> <!-- Button to Start Quiz -->
             </label>
         </div>
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a>
+        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- Quiz Section -->
     <section id="quiz" class="hidden container mt-5">
         <div id="status">
-            <span id="questionNumber">Question 1 / 10</span>
-            <span id="score" class="position-absolute bottom-0 start-0 m-2">Score: 0</span>
+            <span id="questionNumber">Question 1 / 10</span> <!-- Current Question Number -->
+            <span id="score" class="position-absolute bottom-0 start-0 m-2">Score: 0</span> <!-- Current Score -->
             <span id="incorrect" class="position-absolute bottom-0 end-0 m-2">Incorrect: 0</span>
+            <!-- Incorrect Answers -->
         </div>
-        <h2 id="questions">Loading....</h2>
+        <h2 id="questions">Loading....</h2> <!-- Current Question Text If Questions Loading Or Dont Show Up -->
         <div id="choices"></div>
         <button id="nextQuestion" class="btn btn-secondary hidden" aria-keyshortcuts="Enter">Next Question</button>
-        <a class="fa-solid fa-house" id="home-button" href="index.html"></a>
+        <!-- Button to Go to Next Question -->
+        <a class="fa-solid fa-house" id="home-button" href="index.html"></a> <!-- Home Icon -->
     </section>
 
     <!-- End -->
     <section id="end" class="hidden container mt-5">
-        <h2>Quiz Completed!</h2>
-        <p><span>Total Score: </span> <span id="total">0</span></p>
-        <button id="againBtn" class="btn btn-primary">Play Again</button>
+        <h2>Quiz Completed!</h2> <!-- Quiz Completion Message -->
+        <p><span>Total Score: </span> <span id="total">0</span></p> <!-- Total Score Display -->
+        <button id="againBtn" class="btn btn-primary">Play Again</button> <!-- Button to Play Again -->
     </section>
 
     <!-- JavaScript -->
