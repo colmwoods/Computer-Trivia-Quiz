@@ -1,159 +1,241 @@
 html,
 body {
     height: 100%;
+    /* Ensure Body Takes Full Height */
     overflow: hidden;
+    /* Prevent Scrolling */
 }
 
 body {
     background-image: url('../img/background-img.jpg');
+    /* Background Image */
     background-size: cover;
+    /* Cover the Entire Background */
     background-attachment: fixed;
+    /* Fixed Background Attachment */
     background-position: center;
+    /* Center the Background Image */
     background-repeat: no-repeat;
+    /* Do Not Repeat Background Image */
     position: relative;
+    /* Relative Positioning for Absolute Elements */
 }
 
 .hidden {
     display: none !important;
+    /* Hide Button When Question Isnt Answered */
 }
 
 #choices {
     display: grid;
+    /* Use Grid Layout for Choices */
     gap: 12px;
+    /* Space Between Choices */
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Two Columns of Equal Width */
 }
 
 .choice-button.score {
     outline: 8px solid #22c55e;
+    /* Green Outline for Correct Answers */
     outline-offset: 2px;
+    /* Offset for Better Visibility */
 }
 
 .choice-button.incorrect {
     outline: 8px solid #ef4444;
+    /* Red Outline for Incorrect Answers */
     outline-offset: 2px;
+    /* Offset for Better Visibility */
 }
 
 .choice-button {
     background-color: #f3f4f6;
+    /* Light Background Color */
     color: #1f2937;
+    /* Dark Text Color */
     border: none;
+    /* No Border */
     padding: 14px 16px;
+    /* Padding for Buttons */
     border: 2px solid black;
+    /* Black Border for Buttons */
     border-radius: 5px;
+    /* Rounded Corners */
     cursor: pointer;
+    /* Pointer Cursor on Hover */
     font-size: 16px;
+    /* Font Size for Buttons */
     margin: 5px;
+    /* Margin Around Buttons */
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    /* Smooth Transition for Background and Color */
 }
 
 @media (max-width: 480px) {
+
+    /* Responsive Styles for Mobile Devices */
     #status {
         flex-direction: column;
+        /* Stack Status Elements Vertically */
         align-items: stretch;
+        /* Stretch Items to Full Width */
         gap: 6px;
     }
 
     #status span {
         font-size: 14px;
+        /* Smaller Font Size for Status */
     }
 
     #choices {
         grid-template-columns: 1fr;
+        /* Single Column for Choices */
     }
 
     #questions {
         font-size: 18px;
+        /* Smaller Font Size for Questions */
         margin-bottom: 8px;
+        /* Reduced Margin for Questions */
     }
 
     #home-button {
         font-size: 20px !important;
+        /* Smaller Home Button */
         top: 5px;
+        /* Adjusted Position */
+    }
+
+    #nextQuestion {
+        font-size: 14px;
+        /* Smaller Font Size for Next Question Button */
+        padding: 10px 20px;
+        /* Reduced Padding for Mobile */
+        top: 85%;
+        /* Adjusted Position for Mobile */
     }
 }
 
 #nextQuestion {
     position: absolute;
+    /* Position Next Question Button */
     top: 90%;
+    /* Position Near Bottom */
     left: 50%;
+    /* Center Horizontally */
     padding: 20px 45px;
+    /* Padding for Button */
     transform: translate(-50%, -50%);
+    /* Center the Button */
     text-align: center;
+    /* Center Text */
     background-color: #f3f4f6;
+    /* Light Background Color */
     color: black;
+    /* Dark Text Color */
 }
 
 #difficulty {
     top: 5px;
+    /* Top Position Difficulty Selector */
     right: 10px;
+    /* Right Position Difficulty Selector */
     background-color: #f3f4f6;
+    /* Light Background Color */
     color: #1f2937;
+    /* Dark Text Color */
     padding: 10px 20px;
+    /* Padding for Difficulty Selector */
     font-size: 25px;
+    /* Font Size for Difficulty Selector */
 }
 
 #ontoPage2 {
     position: absolute;
+    /* Position Button to Next Page */
     top: 90%;
+    /* Position Near Bottom */
     left: 50%;
+    /* Center Horizontally */
     padding: 20px 45px;
+    /* Padding for Button */
     transform: translate(-50%, -50%);
+    /* Center the Button */
     text-align: center;
+    /* Center Text */
     background-color: #f3f4f6;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #f3f4f6;
-    color: #1f2937;
-    text-align: center;
-    padding: 10px 0;
+    /* Light Background Color */
 }
 
 #numberOfQuestions {
     top: 5px;
+    /* Top Position Number of Questions Selector */
     right: 10px;
+    /* Right Position Number of Questions Selector */
     background-color: #f3f4f6;
+    /* Light Background Color */
     color: #1f2937;
+    /* Dark Text Color */
     padding: 10px 20px;
+    /* Padding for Number of Questions Selector */
     font-size: 25px;
+    /* Font Size for Number of Questions Selector */
 }
 
 #startQuiz {
     position: absolute;
+    /* Position Start Quiz Button */
     top: 90%;
+    /* Position Near Bottom */
     left: 50%;
+    /* Center Horizontally */
     padding: 20px 45px;
+    /* Padding for Button */
     transform: translate(-50%, -50%);
+    /* Center the Button */
     text-align: center;
+    /* Center Text */
     background-color: #f3f4f6;
+    /* Light Background Color */
 }
 
 .container {
     max-width: 800px;
+    /* Maximum Width for Container */
     margin: 0 auto;
+    /* Center Container Horizontally */
     padding: 20px;
+    /* Padding for Container */
     background-color: aqua;
+    /* Light Background Color for Container */
 }
 
 #page1,
 #page2,
 #quiz {
     position: relative;
+    /* Relative Positioning for Sections */
     min-height: 60vh;
+    /* Minimum Height for Sections */
 }
 
 span {
     font-size: 50px;
+    /* Font Size for Status Text */
 }
 
 #home-button {
     position: absolute;
+    /* Position Home Button */
     top: 10px;
+    /* Top Position Home Button */
     right: 10px;
+    /* Right Position Home Button */
     font-size: 30px;
+    /* Font Size for Home Button */
     color: #1f2937;
+    /* Dark Text Color for Home Button */
     text-decoration: none;
+    /* No Underline for Home Button */
 }
