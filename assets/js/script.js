@@ -44,9 +44,23 @@ function showPage(sectionId) {
 }
 
 async function StartQuiz() {
-    const amount = Math.max(5, Math.min(25, parseInt(numberOfQuestions.value || "10", 10)));
+    const rawStr = (numberOfQuestions.value || '').trim(); // Get The Value of Number of Questions Input
+    const raw = rawStr === '' ? 10 : parseInt(rawStr, 10); // Parse the Value to an Integer, Default to 10 if Empty
+    if (!Number.isInteger(raw) || raw < 5 || raw > 25) { // Validate the Input
+        numberOfQuestions.setCustomValidity('Please enter a number between 5 and 25.'); // Set Custom Validity Message
+        numberOfQuestions.reportValidity(); // Show Validation Message
+        numberOfQuestions.focus(); // Focus on the Input Field
+        return; // Exit if the input is invalid
+    }
+    else {
+        numberOfQuestions.setCustomValidity(''); // Clear Custom Validity Message
+    }
+
+    const amount = raw; // Get the Number of Questions from Input
+
     const difficulty = difficultySelect.value; // or "mixed" if you added that option
     const url = `https://opentdb.com/api.php?amount=${amount}&category=18${difficulty && difficulty !== "mixed" ? `&difficulty=${difficulty}` : ""}`;
+
 
     showPage('quiz');
     questionsDisplay.textContent = 'Loading questions…';
