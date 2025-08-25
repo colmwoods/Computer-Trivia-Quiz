@@ -9,17 +9,17 @@ This document outlines the testing carried out for the **Computer Trivia Quiz** 
 ### HTML Validation
 - All pages were run through the [W3C Markup Validator](https://validator.w3.org/).
 - **Result:** Document checking completed. No errors or warnings to show.
-![index.html](assets/images/testing/index-tested.jpg)
-![quiz.html](assets/images/testing/quiz-tested.jpg)
+![index.html](docs/img/index.html-testing.jpg)
 
 ### CSS Validation
 - Stylesheets were tested with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 - **Result:** No errors found.
-![style.css](assets/images/testing/style-tested.jpg)
+![style.css](docs/img/style.css-testing.jpg)
 
 ### JavaScript Validation
 - JavaScript was checked with [JSHint](https://jshint.com/).
 - **Result:** No major issues; minor ES6 compatibility notices only.
+![script.js](docs/img/script.js-testing.jpg)
 
 ---
 
