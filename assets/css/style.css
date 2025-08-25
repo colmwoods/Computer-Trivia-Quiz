@@ -183,7 +183,8 @@ body {
 #page1,
 #page2,
 #quiz,
-#rules {
+#rules,
+#error-page {
     position: relative;
     /* Relative Positioning for Sections */
     min-height: 60vh;
