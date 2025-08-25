@@ -16,6 +16,7 @@ const questionsDisplay = document.getElementById("questions"); // Questions Disp
 const choicesElement = document.getElementById("choices"); // Choices Display
 const NextQuestionButton = document.getElementById("nextQuestion"); // Next Question Button
 const totalScore = document.getElementById("total"); // Total Score Display
+const finalMessage = document.getElementById("finalMessage"); // Final Message Display
 const againButton = document.getElementById("againBtn"); // Play Again Button
 
 
@@ -179,11 +180,6 @@ function selectAnswer(selectedAnswer, correctAnswer) { // Function to Handle Ans
     NextQuestionButton.classList.remove('hidden'); // Show Next Question Button
 }
 
-function EndQuiz() { // Function to End the Quiz
-    showPage('end'); // Show End Page
-    totalScore.textContent = `${state.score} / ${state.questions.length}`; // Display Total Score
-}
-
 function PlayAgain() { // Function to Restart the Quiz
     showPage('page1'); // Show Difficulty Page
 }
@@ -209,3 +205,26 @@ document.addEventListener('keydown', (e) => { // Keydown Event Listener for Keyb
     }
     if (isVisible(end)) { againButton.click(); e.preventDefault(); } // If End Page is Visible, Click the Play Again Button
 });
+
+function showFinalMessage(score, totalQuestions) { // Function to Show Final Message Based on Score
+    let percentage = (score / totalQuestions) * 100;
+    let message = "";
+
+    if (percentage < 50) {
+        message = "You did poor. Keep practicing!";
+    } else if (percentage >= 50 && percentage < 75) {
+        message = "You did good!";
+    } else if (percentage >= 75) {
+        message = "Unreal performance! You're a pro!";
+    }
+
+    // Update the DOM inside the function
+    const finalMessageEl = document.getElementById("finalMessage");
+    finalMessageEl.textContent = `(${percentage.toFixed(0)}%). ${message}`;
+}
+
+function EndQuiz() { // Function to End the Quiz
+    showPage('end'); // Show End Page
+    totalScore.textContent = `${state.score} / ${state.questions.length}`; // Display Total Score
+    showFinalMessage(state.score, state.questions.length); // Show Final Message Based on Score
+}
