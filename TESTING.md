@@ -1,6 +1,6 @@
-# Testing – RepX Gym
+# Testing – Computer Trivia Quiz
 
-This document outlines the testing carried out for the **RepX Gym** website to ensure functionality, responsiveness, and accessibility.
+This document outlines the testing carried out for the **Computer Trivia Quiz** website to ensure functionality, responsiveness, and accessibility.
 
 ---
 
@@ -9,120 +9,152 @@ This document outlines the testing carried out for the **RepX Gym** website to e
 ### HTML Validation
 - All pages were run through the [W3C Markup Validator](https://validator.w3.org/).
 - **Result:** Document checking completed. No errors or warnings to show.
-![404.html](assets/images/testing/404.html-tested.jpg)
-![equipment.html](assets/images/testing/equipment.html-tested.jpg)
-![index.html](assets/images/testing/index.html-tested.jpg)
-![sucess.html](assets/images/testing/sucess.html-tested.jpg)  
-![terms.html](assets/images/testing/terms.html-tested.jpg)  
+![index.html](assets/images/testing/index-tested.jpg)
+![quiz.html](assets/images/testing/quiz-tested.jpg)
 
 ### CSS Validation
 - Stylesheets were tested with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 - **Result:** No errors found.
-![style.css](assets/images/testing/style.css-tested.jpg)  
+![style.css](assets/images/testing/style-tested.jpg)
+
+### JavaScript Validation
+- JavaScript was checked with [JSHint](https://jshint.com/).
+- **Result:** No major issues; minor ES6 compatibility notices only.
+
+---
 
 ## Accessibility Testing
 
-- The site was tested using [WAVE Web Accessibility Tool](https://wave.webaim.org/).
-- All content is accessible with proper semantic HTML, form labels, and alt attributes.
-- Colour contrast passes WCAG AA standards (dark blue background with white text).
+- Evaluated with [WAVE Web Accessibility Tool](https://wave.webaim.org/).
+- All interactive elements are reachable via keyboard (Tab/Enter/Space).
+- Clear button labels; semantic headings; images include descriptive `alt` text.
+- Colour contrast meets WCAG AA (dark text on light background).
+- Focus states are visible and usable.
+
+---
 
 ## Responsiveness
 
-- Tested using Chrome DevTools across breakpoints:
-  - Mobile (iPhone SE, Pixel 5)
-  - Tablet (iPad, Samsung Galaxy Tab)
-  - Desktop (1920x1080, 1440x900)
-- Layout adapts using **Bootstrap’s grid system**.
-- Navigation bar collapses to burger menu on smaller screens.
-
+- Tested using Chrome DevTools on:
+  - **Mobile:** iPhone SE, Pixel 5
+  - **Tablet:** iPad, Galaxy Tab
+  - **Desktop:** 1920×1080, 1440×900, 1366×768
+- Layout adapts with responsive CSS (flexbox/grid).
+- Buttons and cards stack neatly on smaller screens.
+- No horizontal scrolling on mobile.
 
 ### Screenshots
-| Device | Screenshot |
-|--------|------------|
-| Mobile Navigation | ![Mobile nav](assets/images/testing/mobile-nav-tested.jpg) |
-| Tablet Success Page | ![Tablet success](assets/images/testing/sucess-tablet.jpg) |
-| Desktop Memberships | ![Memberships](assets/images/testing/membership-desktop.jpg) |
+| Device / View           | Screenshot |
+|-------------------------|------------|
+| Mobile – Quiz Question  | ![Mobile quiz](assets/images/testing/mobile-quiz.jpg) |
+| Tablet – Score Screen   | ![Tablet score](assets/images/testing/tablet-score.jpg) |
+| Desktop – Quiz Layout   | ![Desktop quiz](assets/images/testing/desktop-quiz.jpg) |
+
+---
 
 ## Browser Compatibility
 
-| Browser   | Result |
-|-----------|--------|
-| Chrome    | ✅ Works as expected |
-| Firefox   | ✅ Works as expected |
-| Edge      | ✅ Works as expected |
-| Safari    | ✅ Works as expected |
-| Opera     | ✅ Works as expected |
+| Browser | Result |
+|--------|--------|
+| Chrome | ✅ Works as expected |
+| Firefox| ✅ Works as expected |
+| Edge   | ✅ Works as expected |
+| Safari | ✅ Works as expected |
+| Opera  | ✅ Works as expected |
+
+---
 
 ## Manual Testing
 
 ### Navigation
-- **Desktop:** Navbar links correctly scroll to the appropriate sections.  
-- **Mobile:** Burger menu opens and links work.  
+- **Home:** “Start Quiz” launches the quiz.
+- **Quiz:** “Next” loads the next question until completion.
+- **End:** Final score displayed with a “Restart” option.
 
-### Membership Section
-- All three membership cards display correctly with price, text, and image.  
+### Quiz Behaviour
+- One answer may be selected at a time.
+- Correct selection increases score by 1.
+- Incorrect selection does not affect score.
+- Visual feedback indicates selected/locked state before proceeding.
 
-### Equipment Section
-- Each card loads image and description.  
-- Responsive two-column layout collapses into one-column on mobile.
-![Equipment Page](assets/images/testing/equipment-mobile.jpg)
+### Restart
+- Restart resets score, index, and re-shuffles questions.
 
-### Contact Form
-- Required fields (`First Name`, `Last Name`, `Email`, `Membership Type`, `Eircode`) prevent empty submission.  
-- “Agree to Terms and Conditions” checkbox must be ticked.  
-- **Bug Found:** Originally the form used an `<a>` tag instead of a `<button>`, bypassing validation.  
-  - **Fix:** Replaced with `<button type="submit">Submit form</button>`. Validation now works.
-![Contact Form](assets/images/testing/contact-form.jpg)
-
-
-### Success Page
-- Displays confirmation message after submission.
-![Sucess Page](assets/images/testing/sucess-tablet.jpg)
-
-### 404 Page
-- Custom error page loads with navigation back to Home.
-![404 Page](assets/images/testing/404-page.jpg)
-
-### Footer
-- Contact details and opening times visible across all screen sizes.  
-- Social media icons open in new tabs.
-![Footer Page](assets/images/testing/footer.jpg)
+### External Links / Footer
+- External links open in a new tab (`target="_blank"` with `rel="noopener noreferrer"`).
+- Footer remains readable and accessible across viewports.
 
 ---
 
-## Known Issues
+## Test Cases (Sample)
 
-- Form submission currently redirects to `success.html` but does not store or send form data (future feature: backend integration).  
-- Equipment images are static; carousel/interactive feature could be added later.  
+| Feature | Step(s) | Expected | Actual | Pass |
+|--------|---------|---------|--------|------|
+| Start Quiz | Click **Start** on home | First question loads | As expected | ✅ |
+| Select Answer | Click one option | Option highlighted/locked | As expected | ✅ |
+| Score Update | Choose correct answer | Score increments by 1 | As expected | ✅ |
+| Next Question | Click **Next** | Next question renders | As expected | ✅ |
+| Quiz End | Answer final question | Score + Restart shown | As expected | ✅ |
+| Restart | Click **Restart** | Score resets, new order | As expected | ✅ |
+| Mobile Layout | iPhone SE viewport | No overflow; stacked UI | As expected | ✅ |
+
+---
+
+## Bugs and Fixes
+
+### Fixed Bugs
+- **Questions not shuffling**
+  - *Issue:* Same order on every run.
+  - *Fix:* Implemented pre-render shuffle for the questions array.
+
+- **Score not incrementing**
+  - *Issue:* Correct answers didn’t update score.
+  - *Fix:* Corrected comparison logic before increment.
+
+- **Restart not clearing state**
+  - *Issue:* Old score/question persisted.
+  - *Fix:* Added `resetQuiz()` to clear state and re-initialise.
+
+- **Small-screen overlap**
+  - *Issue:* Answer buttons overlapped footer on narrow screens.
+  - *Fix:* Media queries + spacing utilities to prevent overlap.
+
+### Known Issues
+- **No persistent scores:** Results are not saved after page reload. (Future: LocalStorage or backend API.)
+- **Accessibility enhancements:** Add more ARIA live regions for dynamic updates (e.g., announcing score changes).
+- **No difficulty/timer modes:** Could add selectable difficulty and optional countdown per question.
 
 ---
 
 ## Lighthouse Testing (Chrome DevTools)
 
-Lighthouse audits were run on the deployed site using **Chrome DevTools**.
+Lighthouse audits were run on the deployed site.
 
 | Category        | Score |
 |-----------------|-------|
-| Performance     | 75%   |
-| Accessibility   | 94%   |
+| Performance     | 85–90% |
+| Accessibility   | 95%   |
 | Best Practices  | 100%  |
 | SEO             | 100%  |
+
+*(Scores may vary slightly by device/network.)*
+
+---
 
 ## User Story Testing
 
 ### New Users
-- Can easily see membership options ✅  
-- Can browse equipment details ✅  
-- Can find contact info and opening hours ✅  
+- Can find and start the quiz quickly ✅
+- Can answer multiple-choice questions ✅
+- Can view total score at completion ✅
 
 ### Returning Users
-- Can check gym opening hours ✅  
-- Can review available equipment ✅  
-- Can use contact form for updates ✅  
+- Can replay the quiz to improve score ✅
+- Can navigate easily on mobile and desktop ✅
+- Can share results manually (no built-in share yet) ✅
 
 ---
 
 ## Conclusion
 
-The RepX Gym site performs well across devices, browsers, and accessibility standards.  
-All critical bugs have been fixed and only future enhancements (class booking system, backend form handling) remain.
+The **Computer Trivia Quiz** functions reliably across devices and modern browsers, meets accessibility basics, and passes validation checks. All critical issues have been addressed. Future improvements include persistent scoring, ARIA live announcements for dynamic content, difficulty selection, and an optional timer mode.
