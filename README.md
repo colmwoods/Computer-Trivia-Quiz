@@ -136,7 +136,8 @@ You can fork this repository to make a copy under your own GitHub account, allow
 ## Credits  
 
 Content  
-- All quiz questions written by the author.  
+- All quiz questions were fetched by a the OpenTDP link provided, With a few of my own fallback question if there is a issue with the OpenTDP link.
+- I found this video very helpful for completing the quiz https://www.youtube.com/watch?v=-cX5jnQgqSM
 
 Media  
 - Icons from https://fontawesome.com  
