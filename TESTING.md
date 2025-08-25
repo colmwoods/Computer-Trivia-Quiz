@@ -115,14 +115,30 @@ This document outlines the testing carried out for the **Computer Trivia Quiz** 
   - *Issue:* Old score/question persisted.
   - *Fix:* Added `resetQuiz()` to clear state and re-initialise.
 
-- **Small-screen overlap**
-  - *Issue:* Answer buttons overlapped footer on narrow screens.
-  - *Fix:* Media queries + spacing utilities to prevent overlap.
+- **Constants declared incorrectly**
+  - *Issue:* Some `const` variables were declared at the very top of the JavaScript file instead of inside the function where they were needed. This caused scope issues and variables being undefined when the quiz was running.  
+  - *Fix:* Moved relevant `const` declarations inside their functions so they are only created when required.  
+
+- **Incorrect handling of API answers**
+  - *Issue:* Initially, the code used a variable `answers` but the OpenTDB API provides `correct_answer` and `incorrect_answers`. This mismatch caused the quiz to fail when rendering options.  
+  - *Fix:* Updated the code to properly combine `correct_answer` with the `incorrect_answers` array when building the multiple-choice options.  
+
+- **Button class misapplied**
+  - *Issue:* The code used `button.classList.add(incorrect)` instead of `button.classList.add('incorrect')`. Without quotes, it looked for a variable instead of adding the string class name.  
+  - *Fix:* Wrapped class names in quotes so the correct CSS classes are applied (`'correct'` or `'incorrect'`).  
+
+- **Normalisation of variables**
+  - *Issue:* In some cases, the correct answer string from the API did not match exactly due to HTML entities or casing differences, meaning right answers were marked as wrong.  
+  - *Fix:* Normalised values using entity decoding and string comparison to ensure correct answers are recognised even if formatting differs.  
+
+- **Shuffled answers overwriting correct answer**
+  - *Issue:* When shuffling the answer array, the variable `correctAnswer` was being reassigned incorrectly, leading to wrong comparisons.  
+  - *Fix:* Changed logic so that `correctAnswer` is always taken directly from the API field `correct_answer` and never overwritten by the shuffled array.  
 
 ### Known Issues
 - **No persistent scores:** Results are not saved after page reload. (Future: LocalStorage or backend API.)
 - **Accessibility enhancements:** Add more ARIA live regions for dynamic updates (e.g., announcing score changes).
-- **No difficulty/timer modes:** Could add selectable difficulty and optional countdown per question.
+- **No difficulty/timer modes:** Could add countdown per question.
 
 ---
 
@@ -132,9 +148,9 @@ Lighthouse audits were run on the deployed site.
 
 | Category        | Score |
 |-----------------|-------|
-| Performance     | 85–90% |
-| Accessibility   | 95%   |
-| Best Practices  | 100%  |
+| Performance     | 100% |
+| Accessibility   | 83%   |
+| Best Practices  | 78%  |
 | SEO             | 100%  |
 
 *(Scores may vary slightly by device/network.)*
