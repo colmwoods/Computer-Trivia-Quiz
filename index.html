@@ -28,61 +28,67 @@
 </head>
 
 <body>
+    <main id="main">
 
-    <!-- Difficulty-->
-    <section id="page1" class="container mt-5">
-        <h1 class="text-center">Computer Trivia Quiz</h1>
-        <p class="text-center">Test your knowledge about computers with this fun quiz!</p>
-        <div class="row">
-            <label>
-                <select id="difficulty" class="form-select">
-                    <option value="mixed" selected>Mixed</option> <!-- Mixed Option -->
-                    <option value="easy">Easy</option> <!-- Easy Option -->
-                    <option value="medium">Medium</option> <!-- Medium Option -->
-                    <option value="hard">Hard</option> <!-- Hard Option -->
-                </select>
-            </label>
-        </div>
-        <button id="ontoPage2">Next</button> <!-- Button to Go to Number of Questions Page -->
-        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
-    </section>
+        <!-- Difficulty-->
+        <section id="page1" class="container mt-5">
+            <h1 class="text-center">Computer Trivia Quiz</h1>
+            <p class="text-center">Test your knowledge about computers with this fun quiz!</p>
+            <div class="row">
+                <label>
+                    <select id="difficulty" class="form-select">
+                        <option value="mixed" selected>Mixed</option> <!-- Mixed Option -->
+                        <option value="easy">Easy</option> <!-- Easy Option -->
+                        <option value="medium">Medium</option> <!-- Medium Option -->
+                        <option value="hard">Hard</option> <!-- Hard Option -->
+                    </select>
+                </label>
+            </div>
+            <button id="ontoPage2">Next</button> <!-- Button to Go to Number of Questions Page -->
+            <a class="fa-solid fa-house home-button" href="index.html" aria-label="Go To Start Page"></a>
+            <!-- Home Icon -->
+        </section>
 
-    <!-- Number Of Questions-->
-    <section id="page2" class="hidden container mt-5">
-        <div class="row">
-            <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
-            <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
-                Maximum Is 25</p>
-            <label>
-                <input type="number" id="numberOfQuestions" class="form-control" placeholder="Enter number of questions"
-                    min="5" max="25" value="10">
-            </label>
-        </div>
-        <button id="startQuiz">Start Quiz</button> <!-- Button to Start Quiz -->
-        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
-    </section>
+        <!-- Number Of Questions-->
+        <section id="page2" class="hidden container mt-5">
+            <div class="row">
+                <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
+                <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
+                    Maximum Is 25</p>
+                <label>
+                    <input type="number" id="numberOfQuestions" class="form-control"
+                        placeholder="Enter number of questions" min="5" max="25" value="10">
+                </label>
+            </div>
+            <button id="startQuiz">Start Quiz</button> <!-- Button to Start Quiz -->
+            <a class="fa-solid fa-house home-button" href="index.html" aria-label="Go To Start Page"></a>
+            <!-- Home Icon -->
+        </section>
 
-    <!-- Quiz Section -->
-    <section id="quiz" class="hidden container mt-5">
-        <div id="status">
-            <span id="questionNumber">Question 1 / 10</span> <!-- Current Question Number -->
-            <span id="score" class="position-absolute bottom-0 start-0 m-2">Score: 0</span> <!-- Current Score -->
-            <span id="incorrect" class="position-absolute bottom-0 end-0 m-2">Incorrect: 0</span> <!-- Wrong Answers -->
+        <!-- Quiz Section -->
+        <section id="quiz" class="hidden container mt-5">
+            <div id="status">
+                <span id="questionNumber">Question 1 / 10</span> <!-- Current Question Number -->
+                <span id="score" class="position-absolute bottom-0 start-0 m-2">Score: 0</span> <!-- Current Score -->
+                <span id="incorrect" class="position-absolute bottom-0 end-0 m-2">Incorrect: 0</span>
+                <!-- Wrong Answers -->
 
-        </div>
-        <h2 id="questions">Loading....</h2> <!-- Current Question Text If Questions Loading Or Dont Show Up -->
-        <div id="choices"></div> <!-- Choices for the Current Question -->
-        <button id="nextQuestion" class="btn btn-secondary hidden">Next Question</button> <!-- Button To Next Page -->
-        <a class="fa-solid fa-house home-button" href="index.html"></a> <!-- Home Icon -->
-    </section>
+            </div>
+            <h2 id="questions">Loading....</h2> <!-- Current Question Text If Questions Loading Or Dont Show Up -->
+            <div id="choices"></div> <!-- Choices for the Current Question -->
+            <button id="nextQuestion" class="btn btn-secondary hidden">Next Question</button>
+            <!-- Button To Next Page -->
+            <a class="fa-solid fa-house home-button" href="index.html" aria-label="Go To Start Page"></a>
+            <!-- Home Icon -->
+        </section>
 
-    <!-- End -->
-    <section id="end" class="hidden container mt-5">
-        <h2>Quiz Completed!</h2> <!-- Quiz Completion Message -->
-        <p><span>Total Score: </span> <span id="total">0</span></p> <!-- Total Score Display -->
-        <button id="againBtn" class="btn btn-primary">Play Again</button> <!-- Button to Play Again -->
-    </section>
-
+        <!-- End -->
+        <section id="end" class="hidden container mt-5">
+            <h2>Quiz Completed!</h2> <!-- Quiz Completion Message -->
+            <p><span>Total Score: </span> <span id="total">0</span></p> <!-- Total Score Display -->
+            <button id="againBtn" class="btn btn-primary">Play Again</button> <!-- Button to Play Again -->
+        </section>
+    </main>
     <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
 </body>

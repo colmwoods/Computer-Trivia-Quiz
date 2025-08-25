@@ -95,7 +95,7 @@ This document outlines the testing carried out for the **Computer Trivia Quiz** 
 | Score Update | Choose correct answer | Score increments by 1 | As expected | ✅ |
 | Next Question | Click **Next** | Next question renders | As expected | ✅ |
 | Quiz End | Answer final question | Score + Restart shown | As expected | ✅ |
-| Restart | Click **Restart** | Score resets, new order | As expected | ✅ |
+| Restart | Click **Home Button** | Score resets, start again at question 1 | As expected | ✅ |
 | Mobile Layout | iPhone SE viewport | No overflow; stacked UI | As expected | ✅ |
 
 ---
