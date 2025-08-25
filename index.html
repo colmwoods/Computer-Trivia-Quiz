@@ -35,7 +35,7 @@
             <h1 class="text-center">Computer Trivia Quiz</h1>
             <p class="text-center">Test your knowledge about computers with this fun quiz!</p>
             <div class="row">
-                <label>
+                <label for="difficulty" class="form-label">
                     <select id="difficulty" class="form-select">
                         <option value="mixed" selected>Mixed</option> <!-- Mixed Option -->
                         <option value="easy">Easy</option> <!-- Easy Option -->
@@ -55,9 +55,8 @@
                 <h2 class="text-center">Number of Questions:</h2> <!-- Heading for Number of Questions -->
                 <p class="text-center"><strong>Note:</strong> The Minimum Amount Of Questions You Can Choose Is 5 And
                     Maximum Is 25</p>
-                <label>
-                    <input type="number" id="numberOfQuestions" class="form-control"
-                        placeholder="Enter number of questions" min="5" max="25" value="10">
+                <label for="numberOfQuestions">Enter number of questions (5–25)</label>
+                <input type="number" id="numberOfQuestions" min="5" max="25" value="10">
                 </label>
             </div>
             <button id="startQuiz">Start Quiz</button> <!-- Button to Start Quiz -->
