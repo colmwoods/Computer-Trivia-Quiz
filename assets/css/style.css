@@ -100,7 +100,8 @@ body {
         /* Reduced Margin for Questions */
     }
 
-    .home-button {
+    .home-button,
+    .rules-button {
         font-size: 20px !important;
         /* Smaller Home Button */
         top: 5px;
@@ -206,4 +207,19 @@ span {
     /* Dark Text Color for Home Button */
     text-decoration: none;
     /* No Underline for Home Button */
+}
+
+.rules-button {
+    position: absolute;
+    /* Position Rules Button */
+    top: 12px;
+    /* Top Position Rules Button */
+    left: 10px;
+    /* Left Position Rules Button */
+    font-size: 30px;
+    /* Font Size for Rules Button */
+    color: #1f2937;
+    /* Dark Text Color for Rules Button */
+    text-decoration: none;
+    /* No Underline for Rules Button */
 }
