@@ -46,9 +46,9 @@ This document outlines the testing carried out for the **Computer Trivia Quiz** 
 ### Screenshots
 | Device / View           | Screenshot |
 |-------------------------|------------|
-| Mobile – Quiz Question  | ![Mobile quiz](assets/images/testing/mobile-quiz.jpg) |
-| Tablet – Score Screen   | ![Tablet score](assets/images/testing/tablet-score.jpg) |
-| Desktop – Quiz Layout   | ![Desktop quiz](assets/images/testing/desktop-quiz.jpg) |
+| Mobile – Quiz Question  | ![Mobile quiz](docs/img/mobile-view.jpg) |
+| Tablet – Score Screen   | ![Tablet score](docs/img/tablet-score-view.jpg) |
+| Desktop – Quiz Layout   | ![Desktop quiz](docs/img/desktop-view.jpg) |
 
 ---
 
