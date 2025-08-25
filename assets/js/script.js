@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const page1 = document.getElementById("page1"); // Difficulty Page
 const page2 = document.getElementById("page2"); // Number Of Questions Page
 const quiz = document.getElementById("quiz"); // Quiz Section
