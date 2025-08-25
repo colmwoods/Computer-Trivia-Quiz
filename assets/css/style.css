@@ -224,3 +224,12 @@ span {
     text-decoration: none;
     /* No Underline for Rules Button */
 }
+
+#finalMessage {
+    font-size: 20px;
+    /* Font Size for Final Message */
+    margin-top: 20px;
+    /* Margin Top for Final Message */
+    text-align: center;
+    /* Center Align Final Message */
+}
